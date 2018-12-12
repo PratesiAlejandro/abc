@@ -1,0 +1,16 @@
+<html>
+  <head>
+    
+  </head>
+  <body>
+      <app-barra-de-menu></app-barra-de-menu>
+  
+  <div class="container">
+
+<!-- El evento seBorroEmpleadoEnviarAListado del componente listado-empleado es capturado por el métdo tomarEmpleadoBorrado -->      
+    <app-listado-empleado (seBorroEmpleadoEnviarAListado)="tomarEmpleadoBorrado($event)" 
+    [listado]="listadoParaCompartir"> </app-listado-empleado>
+  
+  </div>
+  </body>
+  </html>

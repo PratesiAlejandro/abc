@@ -1,0 +1,50 @@
+
+<div class='fondo-login'>
+<app-nav-bar-login></app-nav-bar-login>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      
+      <div *ngIf="activado"> 
+          <app-alertas></app-alertas>
+           </div>
+
+      <h1 class="text-center login-title"></h1>
+     <img class="profile-img" src="../../../assets/Fotos/logonegro.JPG" alt="">
+      <div class="account-wall">
+        <form class="form-signin" [formGroup]="registroFormulario" id="FormIngreso" (ngSubmit)="enviarIngreso()">
+          <div class="form-group">
+
+            <input [formControl]="nombre" class="form-control" type="text" [(ngModel)]="unEmpleado.EmpNombre" id="nombre"
+              name="nombre" placeholder="ingrese nombre" required />
+            <span id="lblnombre" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
+          
+            <select [formControl]="tipo" class="form-control" id="tipo" name="tipo" [(ngModel)]="unEmpleado.EmpTipo" required>
+              <option [ngValue]=tipos[5] selected disabled hidden>Seleccionar tipo empleado</option>
+              <option [ngValue]=tipos[0]>Cocinero</option>
+              <option [ngValue]=tipos[1]>Mozo</option>
+              <option [ngValue]=tipos[2]>Bartender</option>
+              <option [ngValue]=tipos[3]>Cervecero</option>
+              <option [ngValue]=tipos[4]>Socio</option>
+            </select>
+         
+            <input [formControl]="clave" class="form-control" type="password" [(ngModel)]="unEmpleado.EmpClave" id="password"
+              name="password" placeholder="ingrese password" required />
+            <span id="lblclave" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
+            
+
+            <button class="btn btn-lg btn-primary btn-block" type="button" id="enviar" name="enviar" (click)="enviarIngreso()"
+              [disabled]="!registroFormulario.valid">
+              Ingresar</button>
+
+
+          </div>
+        </form>
+      </div>
+      <!--  <a href="#" [routerLink]="['/Alta']" class="text-center new-account">Crear una cuenta </a> -->
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
+</div>

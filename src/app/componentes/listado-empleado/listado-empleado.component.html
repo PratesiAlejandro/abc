@@ -1,0 +1,50 @@
+
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<table class="table table-hover table-bordered table-striped">
+    <thead>
+    <tr>
+  <th>Nombre</th>
+  <th>Tipo</th>
+  <th>Clave</th>
+  <th>Legajo</th>
+  <th>Foto</th>
+  <th>Fecha Ingreso</th>
+  <th>Ultimo Login</th>
+  <th>Estado</th>
+  <th>Cant Operaciones</th>
+  <th></th>
+  
+</tr>
+</thead>
+<tbody>
+      <tr *ngFor="let empleado of listado">         
+        <td>{{empleado.EmpNombre}} </td>
+        <td>{{empleado.EmpTipo}} </td> 
+        <td>{{empleado.EmpClave}} </td> 
+        <td>{{empleado.EmpLegajo}} </td>
+        <td><img class='fotoGrilla' width="60" height="60" class="img-circle" src="http://localhost:80/Comanda/fotos/{{empleado.EmpFoto}}" /></td>
+        <td>{{empleado.EmpFechaRegistro}} </td> 
+        <td>{{empleado.EmpUltimoLogin}} </td>
+        <td>{{empleado.EmpEstado}} </td> 
+        <td>{{empleado.EmpCantidadOperaciones}} </td> 
+        
+             
+     <td> <app-borrar-empleado (seBorroEmpleado)="tomarEmpleadoBorradoEnListadoEmpleado($event)" 
+              [idEmpleado]="empleado.id"> </app-borrar-empleado>  </td>   
+      </tr>   
+    </tbody>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+.img-circle {
+    border-radius: 50%;
+}
+img {
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+}
+
+th {
+    background-color:blue;
+    color: white;
+}
+
